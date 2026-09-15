@@ -8,9 +8,26 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className=''>
+    <div className="container">
       <h1>Hello, World</h1>
       <p>I am Writing JSX</p>
+      <ul>
+        <li>
+          <button>
+            <span role='img' aria-label='grinning face' id='grinning-face'>😀</span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span role='img' aria-label='party popper' id='party-popper'>🎉</span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span role='img' aria-label='woman dancing' id='dancing-woman'>💃</span>
+          </button>
+        </li>
+      </ul>
     </div>
   )
 }
