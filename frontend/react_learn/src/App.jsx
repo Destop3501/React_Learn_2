@@ -13,17 +13,17 @@ function App() {
       <p>I am Writing JSX</p>
       <ul>
         <li>
-          <button>
+          <button onClick={(event) => alert(event.target.id)}>
             <span role='img' aria-label='grinning face' id='grinning-face'>😀</span>
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={(event) => alert(event.target.id)}>
             <span role='img' aria-label='party popper' id='party-popper'>🎉</span>
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={(event) => alert(event.target.id)}>
             <span role='img' aria-label='woman dancing' id='dancing-woman'>💃</span>
           </button>
         </li>
