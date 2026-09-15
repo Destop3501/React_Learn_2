@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import Map from './compnent/Map.jsx'
+import Instruction from './compnent/Instruction.jsx'
 
 const dispalyEmojiName = (event) => alert(event.target.id)
 
@@ -29,6 +30,7 @@ function App() {
     <div className="container">
       <h1>Hello, World</h1>
       {displayAction && <p>I am Writing JSX</p>}
+      <Instruction />
       <ul>
         {/* <li>
           <button onClick={(event) => alert(event.target.id)}>
