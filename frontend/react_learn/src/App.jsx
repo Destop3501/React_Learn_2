@@ -23,12 +23,12 @@ const emojis = [
 ]
 
 function App() {
-  const [count, setCount] = useState(0)
+  const displayAction = false;
 
   return (
     <div className="container">
       <h1>Hello, World</h1>
-      <p>I am Writing JSX</p>
+      displayAction && <p>I am Writing JSX</p>
       <ul>
         {/* <li>
           <button onClick={(event) => alert(event.target.id)}>
