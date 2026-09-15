@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="container">
       <h1>Hello, World</h1>
-      displayAction && <p>I am Writing JSX</p>
+      {displayAction && <p>I am Writing JSX</p>}
       <ul>
         {/* <li>
           <button onClick={(event) => alert(event.target.id)}>
