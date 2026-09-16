@@ -5,6 +5,8 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import Map from './compnent/Map.jsx'
 import Instruction from './compnent/Instruction.jsx'
+import data from './data/data.js'
+import AnimationCard from './compnent/Animation.jsx'
 
 const dispalyEmojiName = (event) => alert(event.target.id)
 
@@ -23,48 +25,70 @@ const emojis = [
   }
 ]
 
+function ShowAdditional(additional) {
+  const alertMeassage = Object.entries(additional).map(
+    information => `${information[0]}: ${information[1]}`)
+    .join('\n');
+  alert(alertMeassage);
+};
+
 function App() {
   const displayAction = false;
 
   return (
-    <div className="container">
-      <h1>Hello, World</h1>
-      {displayAction && <p>I am Writing JSX</p>}
-      <Instruction />
-      <ul>
-        {/* <li>
-          <button onClick={(event) => alert(event.target.id)}>
-            <span role='img' aria-label='grinning face' id='grinning-face'>😀</span>
-          </button> 
-          <button onClick={dispalyEmojiName}>
-            <span role='img' aria-label='grinning face' id='grinning-face'>😀</span>
-          </button>
-        </li>
-        <li>
-          <button onClick={(event) => alert(event.target.id)}>
-            <span role='img' aria-label='party popper' id='party-popper'>🎉</span>
-          </button> 
-          <button onClick={dispalyEmojiName}>
-            <span role='img' aria-label='party popper' id='party-popper'>🎉</span>
-          </button>
-        </li>
-        <li>
-          <button onClick={(event) => alert(event.target.id)}>
-            <span role='img' aria-label='woman dancing' id='dancing-woman'>💃</span>
-          </button> 
-          <button onClick={dispalyEmojiName}>
-            <span role='img' aria-label='woman dancing' id='dancing-woman'>💃</span>
-          </button>
-        </li> */}
-        {emojis.map(emoji => (
-          <li key={emoji.name}>
-            <button onClick={dispalyEmojiName}>
-              <span role='img' aria-label={emoji.name} id={emoji.name}>{emoji.emoji}</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-      <Map />
+    // <div className="container">
+    //   <h1>Hello, World</h1>
+    //   {displayAction && <p>I am Writing JSX</p>}
+    //   <Instruction />
+    //   <ul>
+    //     {/* <li>
+    //       <button onClick={(event) => alert(event.target.id)}>
+    //         <span role='img' aria-label='grinning face' id='grinning-face'>😀</span>
+    //       </button> 
+    //       <button onClick={dispalyEmojiName}>
+    //         <span role='img' aria-label='grinning face' id='grinning-face'>😀</span>
+    //       </button>
+    //     </li>
+    //     <li>
+    //       <button onClick={(event) => alert(event.target.id)}>
+    //         <span role='img' aria-label='party popper' id='party-popper'>🎉</span>
+    //       </button> 
+    //       <button onClick={dispalyEmojiName}>
+    //         <span role='img' aria-label='party popper' id='party-popper'>🎉</span>
+    //       </button>
+    //     </li>
+    //     <li>
+    //       <button onClick={(event) => alert(event.target.id)}>
+    //         <span role='img' aria-label='woman dancing' id='dancing-woman'>💃</span>
+    //       </button> 
+    //       <button onClick={dispalyEmojiName}>
+    //         <span role='img' aria-label='woman dancing' id='dancing-woman'>💃</span>
+    //       </button>
+    //     </li> */}
+    //     {emojis.map(emoji => (
+    //       <li key={emoji.name}>
+    //         <button onClick={dispalyEmojiName}>
+    //           <span role='img' aria-label={emoji.name} id={emoji.name}>{emoji.emoji}</span>
+    //         </button>
+    //       </li>
+    //     ))}
+    //   </ul>
+    //   <Map />
+    // </div>
+    <div className='wrapper'>
+      <h1 className='title'>Animals</h1>
+      <div className='cards'>
+        {data.map(animal => {
+          return <AnimationCard key={animal.name}
+            name={animal.name}
+            scintificName={animal.scientificName}
+            size={animal.size}
+            diet={animal.diet}
+            ShowAdditional={ShowAdditional}
+            additional={animal.additional} />
+        })}
+      </div>
+
     </div>
   )
 }
