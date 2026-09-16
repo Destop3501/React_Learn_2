@@ -33,6 +33,6 @@ AnimationCard.defaultProps = {
     additional: {
         notes: "no additional information"
     }
-}
+};
 
 export default AnimationCard;
