@@ -1,25 +1,27 @@
 import React from "react";
 import './Animation.css';
 import PropTypes from 'prop-types';
+import AnimalDetails from "./AnimalDetails.jsx";
 
-function AnimationCard(props) {
+function AnimationCard({ name, size, additional, ShowAdditional, ...props }) {
     PropTypes.checkPropTypes(AnimationCard.propTypes, props, 'prop', 'AnimationCard');
 
     return (
         <div className="card">
             <h2>Animal Card</h2>
-            <h4>{props.name}</h4>
-            <p><i>{props.scintificName}</i></p>
-            <p>{props.size}kg</p>
-            <p>{props.diet.join(", ")}</p>
-            <button onClick={() => props.ShowAdditional(props.additional)}>More Info</button>
+            <h4>{name}</h4>
+            {/* <p><i>{props.scintificName}</i></p> */}
+            <p>{size}kg</p>
+            {/* <p>{props.diet.map(food => convertFood(food)).join(' ')}</p> */}
+            <AnimalDetails {...props} />
+            <button onClick={() => ShowAdditional(additional)}>More Info</button>
         </div>
     )
 }
 
 AnimationCard.propTypes = {
     name: PropTypes.string.isRequired,
-    scintificName: PropTypes.string.isRequired,
+    scientificName: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
     diet: PropTypes.arrayOf(PropTypes.string).isRequired,
     ShowAdditional: PropTypes.func.isRequired,

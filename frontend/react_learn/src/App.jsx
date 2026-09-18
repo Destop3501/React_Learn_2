@@ -81,7 +81,7 @@ function App() {
         {data.map(animal => {
           return <AnimationCard key={animal.name}
             name={animal.name}
-            scintificName={animal.scientificName}
+            scientificName={animal.scientificName}
             size={animal.size}
             diet={animal.diet}
             ShowAdditional={ShowAdditional}
