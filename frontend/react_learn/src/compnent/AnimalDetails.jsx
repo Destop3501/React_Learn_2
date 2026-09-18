@@ -15,7 +15,6 @@ function convertFood(food) {
 }
 
 function AnimalDetails({ diet, scientificName }) {
-    PropTypes.checkPropTypes(AnimalDetails.propTypes, props, 'prop', 'AnimationDetails');
     return (
         <div>
             <h4>Details</h4>
