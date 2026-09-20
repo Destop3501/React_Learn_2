@@ -7,7 +7,7 @@ function convertFood(food) {
             return '🐜';
         case 'meat':
             return '🍖';
-        case 'plant':
+        case 'plants':
             return '🌱';
         default:
             return ' ';
