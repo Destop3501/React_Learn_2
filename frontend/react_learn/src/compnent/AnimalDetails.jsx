@@ -7,7 +7,7 @@ function convertFood(food) {
             return '🐜';
         case 'meat':
             return '🍖';
-        case 'plants':
+        case 'plant':
             return '🌱';
         default:
             return ' ';
@@ -19,7 +19,7 @@ function AnimalDetails({ diet, scientificName }) {
         <div>
             <h4>Details</h4>
             <div>
-                Scientific Name: {scientificName}
+                <i>Scientific Name: {scientificName}</i>
                 Diet: {diet.map(food => convertFood(food)).join(' ')}
             </div>
         </div>
