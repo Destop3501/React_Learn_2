@@ -2,20 +2,32 @@ import React from "react";
 import './Animation.css';
 import PropTypes from 'prop-types';
 import AnimalDetails from "./AnimalDetails.jsx";
+import Card from "./Card.jsx"
 
 function AnimationCard({ name, size, additional, ShowAdditional, ...props }) {
 
     return (
         <div className="card">
-            <h2>Animal Card</h2>
-            <h4>{name}</h4>
+            <Card title="Animal">
+                <h2>Animal Card</h2>
+                <h4>{name}</h4>
+                {/* <p><i>{props.scintificName}</i></p> */}
+                <p>{size}kg</p>
+                {/* <p>{props.diet.map(food => convertFood(food)).join(' ')}</p> */}
+                <br />
+                <AnimalDetails {...props} />
+                <br />
+                <button onClick={() => ShowAdditional(additional)}>More Info</button>
+            </Card>
+            {/* <h2>Animal Card</h2>
+            <h4>{name}</h4> */}
             {/* <p><i>{props.scintificName}</i></p> */}
-            <p>{size}kg</p>
+            {/* <p>{size}kg</p> */}
             {/* <p>{props.diet.map(food => convertFood(food)).join(' ')}</p> */}
-            <br />
+            {/* <br />
             <AnimalDetails {...props} />
             <br />
-            <button onClick={() => ShowAdditional(additional)}>More Info</button>
+            <button onClick={() => ShowAdditional(additional)}>More Info</button> */}
         </div>
     )
 }
