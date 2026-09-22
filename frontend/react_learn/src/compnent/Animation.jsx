@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import AnimalDetails from "./AnimalDetails.jsx";
 import Card from "./Card.jsx"
 
-function AnimationCard({ name, size, additional, ShowAdditional, ...props }) {
+function AnimationCard({ name, size, additional = { notes: "no additional information" }, ShowAdditional, ...props }) {
 
     return (
         <div className="card">
@@ -43,11 +43,4 @@ AnimationCard.propTypes = {
         link: PropTypes.string
     })
 };
-
-AnimationCard.defaultProps = {
-    additional: {
-        notes: "no additional information"
-    }
-};
-
 export default AnimationCard;
