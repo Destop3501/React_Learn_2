@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 
 function Card({ children, title }) {
     return (
-        <div className="Card">
+        <div className="Card" >
             <h2>{title}</h2>
             <div>
                 {children}

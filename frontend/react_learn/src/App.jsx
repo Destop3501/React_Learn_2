@@ -7,6 +7,7 @@ import Map from './compnent/Map.jsx'
 import Instruction from './compnent/Instruction.jsx'
 import data from './data/data.js'
 import AnimationCard from './compnent/Animation.jsx'
+import Product from './compnent/Product.jsx'
 
 const dispalyEmojiName = (event) => alert(event.target.id)
 
@@ -75,21 +76,22 @@ function App() {
     //   </ul>
     //   <Map />
     // </div>
-    <div className='wrapper'>
-      <h1 className='title'>Animals</h1>
-      <div className='cards'>
-        {data.map(animal => {
-          return <AnimationCard key={animal.name}
-            name={animal.name}
-            scientificName={animal.scientificName}
-            size={animal.size}
-            diet={animal.diet}
-            ShowAdditional={ShowAdditional}
-            additional={animal.additional} />
-        })}
-      </div>
+    // <div className='wrapper'>
+    //   <h1 className='title'>Animals</h1>
+    //   <div className='cards'>
+    //     {data.map(animal => {
+    //       return <AnimationCard key={animal.name}
+    //         name={animal.name}
+    //         scientificName={animal.scientificName}
+    //         size={animal.size}
+    //         diet={animal.diet}
+    //         ShowAdditional={ShowAdditional}
+    //         additional={animal.additional} />
+    //     })}
+    //   </div>
 
-    </div>
+    // </div>
+    <Product />
   )
 }
 
