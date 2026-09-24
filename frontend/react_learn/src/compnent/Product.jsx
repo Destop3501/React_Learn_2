@@ -67,7 +67,9 @@ class Product extends Component {
                     {products.map(product => (
                         <div className="details" key={product.name}>
                             <h2>Product Name: {product.name}</h2>
-                            {product.emoji}
+                            <div className="img">
+                                <span role="img" aria-label={product.name}>{product.emoji}</span>
+                            </div>
                             <h3>Product Price: ${product.price}</h3>
                             <div className="buttons">
                                 <button onClick={() => this.add(product)}>Add</button>
