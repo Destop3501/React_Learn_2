@@ -40,18 +40,21 @@ class Product extends Component {
         this.forceUpdate(); // Re-renders the component without state/setState
     };
 
-    add = () => {
+    add = (product) => {
         this.setcart({
-            Carts: [...this.cart.Carts, "Ice Cream"],
-            Total: this.cart.Total + 1
+            Carts: [...this.cart.Carts, product.name],
+            Total: this.cart.Total + product.price
         });
     };
 
-    remove = () => {
-        if (this.cart.Carts.length === 0) return;
+    remove = (product) => {
+        const index = this.cart.Carts.lastIndexOf(product.name);
+        if (index === -1) return; // Product is not in cart
+        const updatedCarts = [...this.cart.Carts];
+        updatedCarts.splice(index, 1);
         this.setcart({
-            Carts: this.cart.Carts.slice(0, -1),
-            Total: Math.max(0, this.cart.Total - 1)
+            Carts: updatedCarts,
+            Total: Math.max(0, this.cart.Total - product.price)
         });
     };
 
@@ -60,15 +63,19 @@ class Product extends Component {
             <div>
                 <h2>Shopping Cart: {this.cart.Carts.length} total items</h2>
                 <h4>Total: {this.getTotal()}</h4>
-                {products.map(product =>
-                    <div className="Product">
-                        <h1>Product Name: {product.name}</h1>
-                        <img src={product.emoji} alt={product.emoji} />
-                        <p>{product.price}</p>
-                        <button onClick={this.add}>Add</button>
-                        <button onClick={this.remove}>Remove</button>
-                    </div>
-                )}
+                <div className="Product">
+                    {products.map(product => (
+                        <div className="details" key={product.name}>
+                            <h2>Product Name: {product.name}</h2>
+                            {product.emoji}
+                            <h3>Product Price: ${product.price}</h3>
+                            <div className="buttons">
+                                <button onClick={() => this.add(product)}>Add</button>
+                                <button onClick={() => this.remove(product)}>Remove</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

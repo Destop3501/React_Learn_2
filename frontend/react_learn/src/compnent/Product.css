@@ -1,15 +1,28 @@
-.product {
+.Product {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.product button {
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details {
+    width: 30%;
+}
+
+.Product button {
     border: 0;
     padding: 0;
     background: none;
     cursor: pointer;
     font-size: 20px;
     background-color: white;
-    margin: 5px 100px 10px 100px;
+    width: 40%;
+    border-radius: 20px;
+    margin: 0px 10px 0px 10px;
+
 }
